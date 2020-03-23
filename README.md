@@ -10,3 +10,6 @@ docker build -t docs:latest .
 ```sh
 docker run --rm -v /path/to/repo:/workspace docs:latest
 ```
+
+## TODO
+* Install gems during Docker build

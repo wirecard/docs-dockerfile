@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM ubuntu:20.04
 LABEL maintainer="Lukas Deutz <lukas.deutz@wirecard.com>"
 
 WORKDIR /data
@@ -6,8 +6,9 @@ VOLUME /data
 
 ARG DEBIAN_FRONTEND=noninteractive
 
-RUN apt-get update -q
-RUN apt-get install -qy \
+RUN apt-get update -q \
+      && apt-get install -qy \
       texlive texlive-xetex make git rubber scons imagemagick libcairo2 \
-    && apt-get clean
+      && apt-get clean
+
 RUN rm -rf /var/lib/apt/lists/* 
